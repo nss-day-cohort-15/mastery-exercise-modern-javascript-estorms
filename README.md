@@ -56,7 +56,7 @@ These are **completely** optional, once you have the basic requirements met and 
 
 1. Define at least six different modifications and six different weapons that can be added to a robot.
 1. Each modification should provide some combination of the following benefits - increased protection, increased damage, or evasion capability (ability to avoid some attacks).
-1. Define the range of damage that each weapon can do. 
+1. Define the range of damage that each weapon can do.
 
 
 ### Bonus Functional Requirements
