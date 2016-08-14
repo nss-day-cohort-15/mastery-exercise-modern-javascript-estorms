@@ -2,32 +2,43 @@ console.log('scripts connected')
 
 $(document).ready(function (){
 
-$('#output').html(`<div>Output working, bitches</div>`)
+$('#output').html(`
+            <div class="container">
+            <h1>Feline Feed Me, LT</h1>
+            </div>
 
-var Battledrome = (function(battledrome){
+            <div class = "container">
+            Combatant1
+            <input type = 'text'>
+            <div class="dropdown" id="dropdown">
 
-battledrome.Feline = function() {
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline<span class="caret"></span></button>
+                 <ul class="dropdown-menu">
+                    <li><a href="#" id="">Boots</a></li>
+                    <li><a href="#" id="">Buddy</a></li>
+                    <li><a href="#" id="">Sweetie</a></li>
+                    <li><a href="#" id="">Maggie</a></li>
+                    <li><a href="#" id="">Belmont</a></li>
+                    <li><a href="#" id="">Dot</a></li>
+                </ul>
+                </div>
+                </div>
 
-    this.color = null;
-    this.health = Math.floor(Math.random() * 10 + 40);
-    this.damage = Math.floor(Math.random() * 6 + 10);
-    this.attitude = null;
 
-};
+            <div class= "container">
+            Combatant 2
+            <input type = 'text'>
+            <div class="dropdown" id="dropdown">
 
-battledrome.Feline.prototype.setColor = function (newDescription) {
-    this.description = newDescription
-}
-
-
-battledrome.Feline.prototype.setAttitude = function(newAttitude) {
-  this.attitude = newAttitude;
-}
-
-return battledrome
-
-})
-
-(Battledrome || {})
-
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline<span class="caret"></span></button>
+                 <ul class="dropdown-menu">
+                    <li><a href="#" id="">Boots</a></li>
+                    <li><a href="#" id="">Buddy</a></li>
+                    <li><a href="#" id="">Sweetie</a></li>
+                    <li><a href="#" id="">Maggie</a></li>
+                    <li><a href="#" id="">Belmont</a></li>
+                    <li><a href="#" id="">Dot</a></li>
+                </ul>
+                </div>
+                </div>`)
 })

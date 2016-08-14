@@ -1,5 +1,29 @@
+
 h1 {
-    font-family: 'Courier New Light', sans-serif;
-    text-align: center;
-    /*color: darkgrey;*/
+    font-size: 3em;
+    text-align: center
+
 }
+
+
+
+.dropdown {
+    margin-top: 50px
+    margin-bottom: 25px;
+}
+
+
+.dropdown-menu {
+  margin-top: 25px;
+  background-color: red;
+  left: 50%;
+  right: auto;
+/*  text-align: center;*/
+  transform: translate(-50%, 0)
+}
+
+.container {
+    margin-bottom: 25px;
+}
+
+
