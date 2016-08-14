@@ -1,4 +1,6 @@
 $(document).ready( () => {
+var fighter1;
+var fighter2;
 
 $('#output').html(`
             <div class="container">
@@ -38,11 +40,15 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline2">Dot</a></li>
                 </ul>
                 </div>
+                <button class="btn btn-default" type="button" id="attack">Attack</button>
                 </div>`)
 
+var fighter1;
+ var fighter2;
+
 $('.feline1').click( () => {
-    let userName1 = $('#name1').val();
-    let fighter1 = event.target.innerText;
+     userName1 = $('#name1').val();
+     fighter1 = event.target.innerText;
         switch (fighter1) {
         case "Boots":
         fighter1 = new Tuckhouse.Combatants.Boots(userName1);
@@ -77,8 +83,8 @@ console.log(fighter1)
 })
 
 $('.feline2').click( () => {
-    let userName2 = $('#name2').val();
-    let fighter2 = event.target.innerText;
+     userName2 = $('#name2').val();
+     fighter2 = event.target.innerText;
         switch (fighter2) {
         case "Boots":
         fighter2 = new Tuckhouse.Combatants.Boots(userName2);
@@ -112,4 +118,25 @@ $('.feline2').click( () => {
 console.log(fighter2)
 })
 
+
+function attackMode () {
+
+    fighter1.hasCans = fighter1.hasCans - fighter2.eatsCans
+    fighter2.hasCans = fighter2.hasCans - fighter1.eatsCans
+    // printStats(drumpf, champ)
+
+    if ((fighter1.hasCans) <= 0) {
+      alert(`${fighter1.name} loses!`)
+    } else if (fighter2.hasCans <= 0) {
+      alert(`${fighter1.name} loses!`)
+    }}
+
+
+$('#attack').click(attackMode)
+
 })
+
+
+
+
+
