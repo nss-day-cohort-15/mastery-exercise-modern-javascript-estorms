@@ -36,6 +36,7 @@ tuckhouse.Combatants.Boots = function (userName) {
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 6 + 1);
     this.name = userName;
     this.title = 'boots'
+    this.url = "http://placekitten.com/200/200"
 }
 
 tuckhouse.Combatants.Boots.prototype = new tuckhouse.Combatants.Percher();
@@ -45,36 +46,50 @@ tuckhouse.Combatants.Buddy = function (userName) {
     this.hasCans = this.hasCans + Math.floor(Math.random() * 1 + 6);
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 1 + 6);
     this.name = userName;
+    this.title = 'buddy';
+    this.url = 'http://placekitten.com/200/200'
 }
 
 tuckhouse.Combatants.Buddy.prototype = new tuckhouse.Combatants.Percher();
 
-tuckhouse.Combatants.Sweetie = function () {
+tuckhouse.Combatants.Sweetie = function (userName) {
     this.hasCans = this.hasCans + Math.floor(Math.random() * 1 + 6);
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 1 + 6);
+    this.name = userName;
+    this.title = 'sweetie';
+    this.url = 'http://placekitten.com/200/200'
 }
 
 tuckhouse.Combatants.Sweetie.prototype = new tuckhouse.Combatants.Slinker();
 
-tuckhouse.Combatants.Maggie = function () {
+tuckhouse.Combatants.Maggie = function (userName) {
     this.hasCans = this.hasCans + Math.floor(Math.random() * 1 + 6);
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 6 + 1);
+    this.name = userName;
+    this.title = 'maggie';
+    this.url = 'http://placekitten.com/200/200'
 }
 
 tuckhouse.Combatants.Maggie.prototype = new tuckhouse.Combatants.Slinker();
 
-tuckhouse.Combatants.Belmont = function () {
+tuckhouse.Combatants.Belmont = function (userName) {
 
     this.hasCans = this.hasCans + Math.floor(Math.random() * 1 + 6);
     this.eatsCans = this.eatsCans +Math.floor(Math.random() * 6 + 1);
+    this.name = userName;
+    this.title = 'belmont';
+    this.url = 'http://placekitten.com/200/200'
 }
 
 tuckhouse.Combatants.Belmont.prototype = new tuckhouse.Combatants.Indifferent();
 
-tuckhouse.Combatants.Dot = function () {
+tuckhouse.Combatants.Dot = function (userName) {
 
     this.hasCans = this.hasCans + Math.floor(Math.random() * 1 + 6);
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 6 + 1);
+    this.name = userName;
+    this.title = 'dot';
+    this.url = 'http://placekitten.com/g/200/200'
 }
 
 tuckhouse.Combatants.Dot.prototype = new tuckhouse.Combatants.Indifferent();
