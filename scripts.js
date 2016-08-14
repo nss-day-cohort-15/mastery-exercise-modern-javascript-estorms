@@ -1,4 +1,4 @@
-$(document).ready(function (){
+$(document).ready( () => {
 
 $('#output').html(`
             <div class="container">
@@ -40,11 +40,9 @@ $('#output').html(`
                 </div>
                 </div>`)
 
-$('.feline1').click(felineSelected1)
-
-function felineSelected1 () {
-    var userName1 = $('#name1').val();
-    var fighter1 = event.target.innerText;
+$('.feline1').click( () => {
+    let userName1 = $('#name1').val();
+    let fighter1 = event.target.innerText;
         switch (fighter1) {
         case "Boots":
         fighter1 = new Tuckhouse.Combatants.Boots(userName1);
@@ -76,13 +74,11 @@ function felineSelected1 () {
         }
 
 console.log(fighter1)
-}
+})
 
-$('.feline2').click(felineSelected2)
-
-function felineSelected2 () {
-    var userName2 = $('#name2').val();
-    var fighter2 = event.target.innerText;
+$('.feline2').click( () => {
+    let userName2 = $('#name2').val();
+    let fighter2 = event.target.innerText;
         switch (fighter2) {
         case "Boots":
         fighter2 = new Tuckhouse.Combatants.Boots(userName2);
@@ -114,6 +110,6 @@ function felineSelected2 () {
         }
 
 console.log(fighter2)
-}
+})
 
 })
