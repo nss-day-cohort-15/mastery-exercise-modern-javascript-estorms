@@ -23,6 +23,7 @@ $('#output').html(`
                 </ul>
                 </div>
                 </div>
+                <div id='fighter1stats'></div>
 
 
             <div class= "container">
@@ -38,9 +39,15 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline2">Maggie</a></li>
                     <li><a href="#" id="" class="feline2">Belmont</a></li>
                     <li><a href="#" id="" class="feline2">Dot</a></li>
-                </ul>
+                 </div>
                 </div>
-                <button class="btn btn-default" type="button" id="attack">Attack</button>
+                <div id='fighter2stats'></div>
+
+                <div class="container">
+                <div><button class="btn btn-default" type="button" id="attack">Attack to the Death</button>
+                </div>
+                <div class="container" id="fightresults"></div>
+                </div>
                 </div>`)
 
 var fighter1;
@@ -80,6 +87,7 @@ $('.feline1').click( () => {
         }
 
 console.log(fighter1)
+printFighter1Stats(fighter1)
 })
 
 $('.feline2').click( () => {
@@ -116,26 +124,55 @@ $('.feline2').click( () => {
         }
 
 console.log(fighter2)
+printFighter2Stats(fighter2)
 })
-
 
 function attackMode () {
 
     fighter1.hasCans = fighter1.hasCans - fighter2.eatsCans
     fighter2.hasCans = fighter2.hasCans - fighter1.eatsCans
-    // printStats(drumpf, champ)
+    printFighter1Stats(fighter1)
+    printFighter2Stats(fighter2)
+    if(fighter1.hasCans <= 0) {
+        console.log('fighter1 loses')
+        $('#fightresults').html('fighter 1 loses')
+        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} is out of cans!`)
+    }
+    if(fighter2.hasCans <= 0){
+        console.log('fighter2 loses')
+        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`)
+    }
 
-    if ((fighter1.hasCans) <= 0) {
-      alert(`${fighter1.name} loses!`)
-    } else if (fighter2.hasCans <= 0) {
-      alert(`${fighter1.name} loses!`)
-    }}
+}
 
+function printFighter1Stats(x){
+      var fighterStats = `<p>${x.name} the ${x.title}, whose attitude is always ${x.attitude}, has ${x.hasCans} cans</p>`
+      $("#fighter1stats").html(fighterStats)
+}
+
+function printFighter2Stats(x){
+      var fighterStats = `<p>${x.name} the ${x.title}, whose attitude is always ${x.attitude}, has ${x.hasCans} cans</p>`
+      $("#fighter2stats").html(fighterStats)
+}
 
 $('#attack').click(attackMode)
 
 })
 
+
+
+
+
+/*
+
+1. Finish attack function, including DOM print and fight continuance
+2. Reset attack / new attack button
+3. Const & ES features
+4. Styling
+5. Testing
+6. Gulp
+
+*/
 
 
 
