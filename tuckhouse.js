@@ -5,7 +5,7 @@ tuckhouse.Combatants = {};
 tuckhouse.Combatants.Cat = function() {
 
     this.hasCans = 50;
-    this.eatsCans = null;
+    this.eatsCans = 3;
     this.preferences = null;
     this.indenturedServant = 'Luke';
     this.attitude = 'bad';
@@ -34,8 +34,8 @@ tuckhouse.Combatants.Slinker.prototype = new tuckhouse.Combatants.Cat();
 tuckhouse.Combatants.Indifferent.prototype = new tuckhouse.Combatants.Cat();
 
 tuckhouse.Combatants.Boots = function (userName) {
-    this.hasCans = this.hasCans + Math.floor(Math.random() * 60 + 1);
-    this.eatsCans = this.eatsCans + Math.floor(Math.random() * 50 + 1);
+    this.hasCans = this.hasCans + Math.floor(Math.random() * 6 + 1);
+    this.eatsCans = this.eatsCans + Math.floor(Math.random() * 8 + 1);
     this.name = userName;
     this.title = 'Boots'
 
@@ -45,8 +45,8 @@ tuckhouse.Combatants.Boots.prototype = new tuckhouse.Combatants.Percher();
 
 
 tuckhouse.Combatants.Buddy = function (userName) {
-    this.hasCans = this.hasCans + Math.floor(Math.random() * 30 + 6);
-    this.eatsCans = this.eatsCans + Math.floor(Math.random() * 40 +  7);
+    this.hasCans = this.hasCans + Math.floor(Math.random() * 3 + 1);
+    this.eatsCans = this.eatsCans + Math.floor(Math.random() * 4 + 7);
     this.name = userName;
     this.title = 'Buddy';
 
@@ -55,8 +55,8 @@ tuckhouse.Combatants.Buddy = function (userName) {
 tuckhouse.Combatants.Buddy.prototype = new tuckhouse.Combatants.Percher();
 
 tuckhouse.Combatants.Sweetie = function (userName) {
-    this.hasCans = this.hasCans + Math.floor(Math.random() * 11 + 99);
-    this.eatsCans = this.eatsCans + Math.floor(Math.random() * 50 + 6);
+    this.hasCans = this.hasCans + Math.floor(Math.random() * 11 + 1);
+    this.eatsCans = this.eatsCans + Math.floor(Math.random() * 4 + 6);
     this.name = userName;
     this.title = 'Sweetie';
 
@@ -65,8 +65,8 @@ tuckhouse.Combatants.Sweetie = function (userName) {
 tuckhouse.Combatants.Sweetie.prototype = new tuckhouse.Combatants.Slinker();
 
 tuckhouse.Combatants.Maggie = function (userName) {
-    this.hasCans = this.hasCans + Math.floor(Math.random() * 1 + 27);
-    this.eatsCans = this.eatsCans + Math.floor(Math.random() * 30 + 99);
+    this.hasCans = this.hasCans + Math.floor(Math.random() * 1 + 20);
+    this.eatsCans = this.eatsCans + Math.floor(Math.random() * 3 + 9);
     this.name = userName;
     this.title = 'Maggie';
 
@@ -76,8 +76,8 @@ tuckhouse.Combatants.Maggie.prototype = new tuckhouse.Combatants.Slinker();
 
 tuckhouse.Combatants.Belmont = function (userName) {
 
-    this.hasCans = this.hasCans + Math.floor(Math.random() * 10 + 50);
-    this.eatsCans = this.eatsCans +Math.floor(Math.random() * 16 + 10);
+    this.hasCans = this.hasCans + Math.floor(Math.random() * 10 + 3);
+    this.eatsCans = this.eatsCans +Math.floor(Math.random() * 12 + 11);
     this.name = userName;
     this.title = 'Belmont';
 
@@ -87,7 +87,7 @@ tuckhouse.Combatants.Belmont.prototype = new tuckhouse.Combatants.Indifferent();
 
 tuckhouse.Combatants.Dot = function (userName) {
 
-    this.hasCans = this.hasCans + Math.floor(Math.random() * 77 + 18);
+    this.hasCans = this.hasCans + Math.floor(Math.random() * 7 + 18);
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 1 + 15);
     this.name = userName;
     this.title = 'Dot';

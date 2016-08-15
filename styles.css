@@ -1,18 +1,42 @@
 body {
     font-size: 2em;
-
+ /*   background-image: url('hellcat.jpg');*/
+/*
+ background-image: url('hellcat.jpg');
+    background-repeat: no-repeat;
+    background-position: top;*/
+    background-color: rgba(255, 0, 255, 0.4);
+    font-weight: bold;
 }
 
-h1 {
-    font-size: 2em;
-    text-align: center;
-
+span {
+    background-color: pink;
+    padding: 5px;
+    border-radius: 25px;
 }
+/*
+span:hover {
+    background-color: hotpink;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+/*a:hover {
+    background-color: hotpink;
+}*/
+
+.spacer{
+    margin-top: 50px;
+  /*  background-image: url('hellcat.jpg');*/
+}
+
+
 
 .input {
     box-shadow: 8px 5px 3px black;
     font-weight: bold;
     color: black;
+    margin-top: 5px;
 
 }
 
@@ -49,10 +73,15 @@ h1 {
 
     box-shadow: 8px 5px 3px black;
     font-size: 1em;
+    height: 50px;
 }
 
 #fightresults {
    text-align: center;
    font-size: 3em;
+}
 
+.divButt {
+     display: block;
+    margin: 0 auto;
 }

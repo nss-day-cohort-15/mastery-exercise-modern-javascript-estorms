@@ -5,14 +5,16 @@ $(document).ready( () => {
  let fighter2;
 
 $('#output').html(`
+            <div class="container spacer"></div>
+            <div id="fightresults"></div>
             <div class="container">
-            <h1>Feed Me, LT</h1>
-            </div>
+                <div><button class="btn btn-default butt pull-center" type="button" id="again">Play Again</button></div>
+                </div>
+                </div>
             <div class = "container">
-            Name Your Feline Fighter 1:
-            <input type="text" id="name1" class="input">
+            <input type="text" id="name1" class="input" placeholder = "Name Your Hellcat #1">
             <div class="dropdown pull-right" id="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline 1 Type<span class="caret"></span></button>
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Pick That Hellcat's Type</button>
                  <ul class="dropdown-menu">
                     <li><a href="#" id="" class="feline1">Boots</a></li>
                     <li><a href="#" id="" class="feline1">Buddy</a></li>
@@ -25,10 +27,9 @@ $('#output').html(`
                 </div>
                 <div id='fighter1stats'></div>
             <div class= "container">
-            Name Your Feline Fighter 2:
-            <input type="text" id="name2" class="input">
+            <input type="text" id="name2" class="input" placeholder ="Name Your Hellcat #2">
             <div class="dropdown pull-right" id="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline 2 Type<span class="caret"></span></button>
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Pick That Hellcat's Type</button>
                  <ul class="dropdown-menu">
                     <li><a href="#" id="" class="feline2">Boots</a></li>
                     <li><a href="#" id="" class="feline2">Buddy</a></li>
@@ -37,15 +38,11 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline2">Belmont</a></li>
                     <li><a href="#" id="" class="feline2">Dot</a></li>
                  </div>
-                </div>
-                <div id='fighter2stats'></div>
+                </div><div id='fighter2stats'></div>
                 <div class="container">
-                <div><button class="btn btn-default butt" type="button" id="attack">Attack</button>
-                </div>
-                <div class="container" id="fightresults"></div>
-                <div><button class="btn btn-default butt" type="button" id="again">Battle Again</button>
-                </div>
-                </div>
+                <button class="btn btn-default butt pull-center" type="button" id="attack">Which Hellcat Will Eat All the Other's Cans?</button>
+                <div style="text-align:center; margin-top: 5px;">Click to watch those cans disappear!</div>
+
                 </div>`)
 
 
