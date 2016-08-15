@@ -50,7 +50,7 @@ $('#output').html(`
                 <div class="container-fluid">
                 <div id='fighter2stats'></div>
 
-                <div><button class="btn btn-default" type="button" id="attack">Attack to the Death</button>
+                <div><button class="btn btn-default butt" type="button" id="attack">Attack to the Death</button>
                 </div>
                 <div class="container" id="fightresults"></div>
                 </div>
