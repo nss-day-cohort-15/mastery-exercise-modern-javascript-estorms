@@ -43,6 +43,8 @@ $('#output').html(`
                 <div><button class="btn btn-default butt" type="button" id="attack">Attack</button>
                 </div>
                 <div class="container" id="fightresults"></div>
+                <div><button class="btn btn-default butt" type="button" id="again">Battle Again</button>
+                </div>
                 </div>
                 </div>`)
 
@@ -140,17 +142,27 @@ function attackMode () {
 }
 
 function printFighter1Stats(x){
-      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, prefers to be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with ${x.hasCans} cans.</p>`
+      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with ${x.hasCans} cans.</p>`
       $("#fighter1stats").html(fighterStats)
 }
 
 function printFighter2Stats(x){
-      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.length} feet long, prefers to be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with ${x.hasCans} cans.</p>`
+      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with ${x.hasCans} cans.</p>`
       $("#fighter2stats").html(fighterStats)
 }
 
 
 $('#attack').click(attackMode)
+$('#again').click(again)
+
+function again() {
+    $('#fightresults').empty();
+    $('#fighter1stats').empty();
+    $('#fighter2stats').empty();
+    $('.input').val('');
+
+    // attackMode();
+}
 
 })
 
@@ -159,11 +171,3 @@ $('#attack').click(attackMode)
 
 
 
-/*
-1. Finish attack function, including DOM print and fight continuance
-2. Reset attack / new attack button
-3. Const & ES features
-4. Styling
-5. Testing
-6. Gulp
-*/

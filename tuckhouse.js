@@ -13,7 +13,7 @@ tuckhouse.Combatants.Cat = function() {
 };
 
 tuckhouse.Combatants.Percher = function () {
-    this.preferences = 'eating your soul'
+    this.preferences = 'listening to Jamiroquai'
     this.weight = 25;
 }
 
