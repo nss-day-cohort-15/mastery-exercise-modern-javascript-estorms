@@ -1,18 +1,18 @@
+'use strict'
+
 $(document).ready( () => {
-var fighter1;
-var fighter2;
+ let fighter1;
+ let fighter2;
 
 $('#output').html(`
             <div class="container">
-            <h1>Feline Feed Me, LT</h1>
+            <h1>Feed Me, LT</h1>
             </div>
-            <div class="container-fluid" id="cont1">
-
-            Feline Fighter #1:
-
-            <input type="text" class="input" id="name1">
-            <div class="dropdown" id="dropdown">
-            <button class="btn btn-default dropdown-toggle butt" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline<span class="caret"></span></button>
+            <div class = "container">
+            Name Your Feline Fighter 1:
+            <input type="text" id="name1" class="input">
+            <div class="dropdown pull-right" id="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline 1 Type<span class="caret"></span></button>
                  <ul class="dropdown-menu">
                     <li><a href="#" id="" class="feline1">Boots</a></li>
                     <li><a href="#" id="" class="feline1">Buddy</a></li>
@@ -21,22 +21,15 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline1">Belmont</a></li>
                     <li><a href="#" id="" class="feline1">Dot</a></li>
                 </ul>
-
                 </div>
                 </div>
-                </div>
-
                 <div id='fighter1stats'></div>
-
-            <div class = "container-fluid pull-right" id="cont2">
-
-
-            Feline Fighter #2
-
-            <input type="text" class="input" id="name2">
-            <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle butt" type="button" data-toggle="dropdown">Choose Your Feline<span class="caret"></span></button>
-                 <ul class="dropdown-menu" pull-right>
+            <div class= "container">
+            Name Your Feline Fighter 2:
+            <input type="text" id="name2" class="input">
+            <div class="dropdown pull-right" id="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline 2 Type<span class="caret"></span></button>
+                 <ul class="dropdown-menu">
                     <li><a href="#" id="" class="feline2">Boots</a></li>
                     <li><a href="#" id="" class="feline2">Buddy</a></li>
                     <li><a href="#" id="" class="feline2">Sweetie</a></li>
@@ -45,22 +38,17 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline2">Dot</a></li>
                  </div>
                 </div>
-
-
-                <div class="container-fluid">
                 <div id='fighter2stats'></div>
-
-                <div><button class="btn btn-default butt" type="button" id="attack">Attack to the Death</button>
+                <div class="container">
+                <div><button class="btn btn-default butt" type="button" id="attack">Attack</button>
                 </div>
                 <div class="container" id="fightresults"></div>
                 </div>
                 </div>`)
 
-var fighter1;
- var fighter2;
 
 $('.feline1').click( () => {
-     userName1 = $('#name1').val();
+     var userName1 = $('#name1').val();
      fighter1 = event.target.innerText;
         switch (fighter1) {
         case "Boots":
@@ -97,7 +85,7 @@ printFighter1Stats(fighter1)
 })
 
 $('.feline2').click( () => {
-     userName2 = $('#name2').val();
+     var userName2 = $('#name2').val();
      fighter2 = event.target.innerText;
         switch (fighter2) {
         case "Boots":
@@ -142,28 +130,30 @@ function attackMode () {
     if(fighter1.hasCans <= 0) {
         console.log('fighter1 loses')
         $('#fightresults').html('fighter 1 loses')
-        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} ate all of ${fighter1.name}'s cans!`)
+        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} is out of cans!`)
     }
     if(fighter2.hasCans <= 0){
         console.log('fighter2 loses')
-        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} ate all of ${fighter2.name}'s cans!`)
+        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`)
     }
 
 }
 
 function printFighter1Stats(x){
-      var fighterStats = `<p>${x.name} the ${x.title}, whose attitude is always ${x.attitude}, has ${x.hasCans} cans</p>`
+      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, prefers to be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with ${x.hasCans} cans.</p>`
       $("#fighter1stats").html(fighterStats)
 }
 
 function printFighter2Stats(x){
-      var fighterStats = `<p>${x.name} the ${x.title}, whose attitude is always ${x.attitude}, has ${x.hasCans} cans</p>`
+      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.length} feet long, prefers to be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with ${x.hasCans} cans.</p>`
       $("#fighter2stats").html(fighterStats)
 }
+
 
 $('#attack').click(attackMode)
 
 })
+
 
 
 

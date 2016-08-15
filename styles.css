@@ -1,17 +1,18 @@
-
 h1 {
-    font-size: 3em;
+    font-size: 4em;
     text-align: center;
+
 }
 
 .input {
     box-shadow: 8px 5px 3px black;
-    font-weight: bolder;
-    /*color: black;*/
+    font-weight: bold;
+    color: black;
 }
 
 .dropdown {
     margin-top: 10px;
+    box-shadow: 8px 5px 3px black;
 }
 
 
@@ -36,6 +37,6 @@ h1 {
 }
 
 .butt {
-    background-color: orchid;
+   /* background-color: orchid;*/
     box-shadow: 8px 5px 3px black;
 }
