@@ -6,13 +6,13 @@ $('#output').html(`
             <div class="container">
             <h1>Feline Feed Me, LT</h1>
             </div>
+            <div class="container-fluid" id="cont1">
 
-            <div class = "container">
-            Combatant1
-            <input type="text" id="name1">
+            Feline Fighter #1:
+
+            <input type="text" class="input" id="name1">
             <div class="dropdown" id="dropdown">
-
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline<span class="caret"></span></button>
+            <button class="btn btn-default dropdown-toggle butt" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline<span class="caret"></span></button>
                  <ul class="dropdown-menu">
                     <li><a href="#" id="" class="feline1">Boots</a></li>
                     <li><a href="#" id="" class="feline1">Buddy</a></li>
@@ -21,18 +21,22 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline1">Belmont</a></li>
                     <li><a href="#" id="" class="feline1">Dot</a></li>
                 </ul>
+
                 </div>
                 </div>
+                </div>
+
                 <div id='fighter1stats'></div>
 
+            <div class = "container-fluid pull-right" id="cont2">
 
-            <div class= "container">
-            Combatant 2
-            <input type="text" id="name2">
-            <div class="dropdown" id="dropdown">
 
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Feline<span class="caret"></span></button>
-                 <ul class="dropdown-menu">
+            Feline Fighter #2
+
+            <input type="text" class="input" id="name2">
+            <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle butt" type="button" data-toggle="dropdown">Choose Your Feline<span class="caret"></span></button>
+                 <ul class="dropdown-menu" pull-right>
                     <li><a href="#" id="" class="feline2">Boots</a></li>
                     <li><a href="#" id="" class="feline2">Buddy</a></li>
                     <li><a href="#" id="" class="feline2">Sweetie</a></li>
@@ -41,9 +45,11 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline2">Dot</a></li>
                  </div>
                 </div>
+
+
+                <div class="container-fluid">
                 <div id='fighter2stats'></div>
 
-                <div class="container">
                 <div><button class="btn btn-default" type="button" id="attack">Attack to the Death</button>
                 </div>
                 <div class="container" id="fightresults"></div>
@@ -136,11 +142,11 @@ function attackMode () {
     if(fighter1.hasCans <= 0) {
         console.log('fighter1 loses')
         $('#fightresults').html('fighter 1 loses')
-        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} is out of cans!`)
+        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} ate all of ${fighter1.name}'s cans!`)
     }
     if(fighter2.hasCans <= 0){
         console.log('fighter2 loses')
-        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`)
+        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} ate all of ${fighter2.name}'s cans!`)
     }
 
 }
@@ -164,16 +170,10 @@ $('#attack').click(attackMode)
 
 
 /*
-
 1. Finish attack function, including DOM print and fight continuance
 2. Reset attack / new attack button
 3. Const & ES features
 4. Styling
 5. Testing
 6. Gulp
-
 */
-
-
-
-

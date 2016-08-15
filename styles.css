@@ -1,29 +1,39 @@
 
 h1 {
     font-size: 3em;
-    text-align: center
-
+    text-align: center;
 }
 
-
+.input {
+    box-shadow: 8px 5px 3px black;
+}
 
 .dropdown {
-    margin-top: 50px
-    margin-bottom: 25px;
+    margin-top: 10px;
 }
 
 
 .dropdown-menu {
-  margin-top: 25px;
-  background-color: red;
-  left: 50%;
-  right: auto;
-/*  text-align: center;*/
-  transform: translate(-50%, 0)
+  margin-top: 30px;
+/*  background-color: blue;*/
+
+
 }
 
 .container {
     margin-bottom: 25px;
 }
 
+#cont2 {
+    margin-top: -70px;
+}
 
+#attack {
+    display: block;
+    margin: 0 auto;
+}
+
+.butt {
+    background-color: orchid;
+    box-shadow: 8px 5px 3px black;
+}
