@@ -72,6 +72,12 @@ body {
     margin: 0 auto;
 }
 
+img {
+  max-height: 200px;
+  max-width: 200px;
+  position: center;
+}
+
 /*button:hover {
   background-color: yellow;
 }*/
