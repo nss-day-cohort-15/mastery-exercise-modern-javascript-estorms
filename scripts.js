@@ -1,5 +1,6 @@
+'use strict'
+
 $(document).ready( () => {
-    'use strict';
  let fighter1;
  let fighter2;
 
@@ -37,12 +38,10 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline2">Belmont</a></li>
                     <li><a href="#" id="" class="feline2">Dot</a></li>
                  </div>
-                 <img src="hellcat.jpg" class="hidden">
                 </div><div id='fighter2stats'></div>
                 <div class="container">
                 <button class="btn btn-default butt pull-center" type="button" id="attack">Which Hellcat Will Eat All the Other's Cans?</button>
                 <div style="text-align:center; margin-top: 5px;">Click to watch those cans disappear!</div>
-
                 </div>`)
 
 
@@ -162,9 +161,3 @@ function again() {
 }
 
 })
-
-
-
-
-
-
