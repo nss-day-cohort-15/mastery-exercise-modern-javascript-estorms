@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 $(document).ready( () => {
  let fighter1;
@@ -55,32 +55,32 @@ $('.feline1').click( () => {
 
         case "Buddy":
         fighter1 = new Tuckhouse.Combatants.Buddy(userName1);
-        break
+        break;
 
         case "Sweetie":
         fighter1 = new Tuckhouse.Combatants.Sweetie(userName1);
-        break
+        break;
 
         case "Maggie":
         fighter1 = new Tuckhouse.Combatants.Maggie(userName1);
-        break
+        break;
 
         case "Belmont":
         fighter1 = new Tuckhouse.Combatants.Belmont(userName1);
-        break
+        break;
 
         case "Dot":
         fighter1 = new Tuckhouse.Combatants.Dot(userName1);
-        break
+        break;
 
         default:
-        alert('somehow you broke my code!')
+        alert('somehow you broke my code!');
 
         }
 
-console.log(fighter1)
-printFighter1Stats(fighter1)
-})
+console.log(fighter1);
+printFighter1Stats(fighter1);
+});
 
 $('.feline2').click( () => {
      var userName2 = $('#name2').val();
@@ -113,43 +113,43 @@ $('.feline2').click( () => {
         default:
         alert('somehow you broke my code!')
 
-        }
+        };
 
-console.log(fighter2)
-printFighter2Stats(fighter2)
-})
+console.log(fighter2);
+printFighter2Stats(fighter2);
+});
 
 function attackMode () {
 
-    fighter1.hasCans = fighter1.hasCans - fighter2.eatsCans
-    fighter2.hasCans = fighter2.hasCans - fighter1.eatsCans
-    printFighter1Stats(fighter1)
-    printFighter2Stats(fighter2)
+    fighter1.hasCans = fighter1.hasCans - fighter2.eatsCans;
+    fighter2.hasCans = fighter2.hasCans - fighter1.eatsCans;
+    printFighter1Stats(fighter1);
+    printFighter2Stats(fighter2);
     if(fighter1.hasCans <= 0) {
         console.log('fighter1 loses')
-        $('#fightresults').html('fighter 1 loses')
-        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} is out of cans!`)
-    }
+        $('#fightresults').html('fighter 1 loses');
+        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} is out of cans!`);
+    };
     if(fighter2.hasCans <= 0){
         console.log('fighter2 loses')
-        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`)
-    }
+        $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`);
+    };
 
-}
+};
 
 function printFighter1Stats(x){
       var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans} </span>cans.</p>`
-      $("#fighter1stats").html(fighterStats)
-}
+      $("#fighter1stats").html(fighterStats);
+};
 
 function printFighter2Stats(x){
       var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with<span style="color:red; font-weight: bolder">${x.hasCans} </span> cans.</p>`
-      $("#fighter2stats").html(fighterStats)
-}
+      $("#fighter2stats").html(fighterStats);
+};
 
 
-$('#attack').click(attackMode)
-$('#again').click(again)
+$('#attack').click(attackMode);
+$('#again').click(again);
 
 function again() {
     $('#fightresults').empty();
@@ -158,6 +158,6 @@ function again() {
     $('.input').val('');
 
     // attackMode();
-}
+};
 
-})
+});
