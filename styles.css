@@ -1,33 +1,13 @@
 body {
     font-size: 2em;
- /*   background-image: url('hellcat.jpg');*/
-/*
- background-image: url('hellcat.jpg');
-    background-repeat: no-repeat;
-    background-position: top;*/
-    background-color: rgba(255, 0, 255, 0.4);
+    background-color: rgba(255, 0, 255, 0.3);
     font-weight: bold;
 }
 
-span {
-    background-color: pink;
-    padding: 5px;
-    border-radius: 25px;
-}
-/*
-span:hover {
-    background-color: hotpink;
-    padding: 5px;
-    border-radius: 25px;
-}
 
-/*a:hover {
-    background-color: hotpink;
-}*/
 
 .spacer{
     margin-top: 50px;
-  /*  background-image: url('hellcat.jpg');*/
 }
 
 
@@ -37,6 +17,7 @@ span:hover {
     font-weight: bold;
     color: black;
     margin-top: 5px;
+    background-color: white;
 
 }
 
@@ -48,6 +29,7 @@ span:hover {
 
 .dropdown-menu {
   margin-top: 30px;
+ /* background-color: yellow;*/
 
 }
 
@@ -76,12 +58,20 @@ span:hover {
     height: 50px;
 }
 
+.butt:hover {
+  background-color: firebrick;
+}
+
 #fightresults {
    text-align: center;
    font-size: 3em;
 }
 
 .divButt {
-     display: block;
+    display: block;
     margin: 0 auto;
 }
+
+/*button:hover {
+  background-color: yellow;
+}*/

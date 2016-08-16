@@ -139,12 +139,12 @@ function attackMode () {
 }
 
 function printFighter1Stats(x){
-      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with ${x.hasCans} cans.</p>`
+      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans} </span>cans.</p>`
       $("#fighter1stats").html(fighterStats)
 }
 
 function printFighter2Stats(x){
-      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with ${x.hasCans} cans.</p>`
+      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with<span style="color:red; font-weight: bolder">${x.hasCans} </span> cans.</p>`
       $("#fighter2stats").html(fighterStats)
 }
 
