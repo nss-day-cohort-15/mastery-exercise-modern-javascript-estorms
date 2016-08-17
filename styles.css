@@ -1,10 +1,12 @@
 body {
     font-size: 2em;
-    background-color: rgba(255, 0, 255, 0.3);
+    /*background-color: rgba(255, 0, 255, 0.3);*/
     font-weight: bold;
 }
 
-
+h2 {
+  text-align: center;
+}
 
 .spacer{
     margin-top: 50px;
@@ -58,9 +60,12 @@ body {
     height: 50px;
 }
 
-.butt:hover {
-  background-color: firebrick;
+img {
+box-shadow: 8px 5px 3px black;
 }
+/*.butt:hover {
+  background-color: firebrick;
+}*/
 
 #fightresults {
    text-align: center;

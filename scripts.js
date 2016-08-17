@@ -5,7 +5,8 @@ $(document).ready( () => {
  let fighter2;
 
 $('#output').html(`
-            <div class="container spacer"></div>
+            <p></p>
+            <h2>Feline Feed Me, LT</h2>
             <div id="fightresults"></div>
             <div class="container">
                 <div><button class="btn btn-default butt pull-center" type="button" id="again">Play Again</button></div>
@@ -39,6 +40,7 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline2">Dot</a></li>
                  </div>
                 </div><div id='fighter2stats'></div>
+
                 <div class="container">
                 <button class="btn btn-default butt pull-center" type="button" id="attack">Which Hellcat Will Eat All the Other's Cans?</button>
                 <div style="text-align:center; margin-top: 5px;">Click to watch those cans disappear!</div>
@@ -138,12 +140,13 @@ function attackMode () {
 };
 
 function printFighter1Stats(x){
-      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans} </span>cans.</p>`
+      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</p><img src="grumpcat.jpg">`
       $("#fighter1stats").html(fighterStats);
 };
 
 function printFighter2Stats(x){
-      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with<span style="color:red; font-weight: bolder">${x.hasCans} </span> cans.</p>`
+      var fighterStats = `<p>${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</p> <img src="hellcat.jpg">
+`
       $("#fighter2stats").html(fighterStats);
 };
 
