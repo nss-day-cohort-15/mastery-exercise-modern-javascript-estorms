@@ -5,8 +5,8 @@ $(document).ready( () => {
  let fighter2;
 
 $('#output').html(`
-            <p></p>
-            <h2>Feline Feed Me, LT</h2>
+
+            <div id="header">Feline Feed Me, LT</div>
 
             <div class="container">
                 <div><button class="btn btn-default butt pull-center" type="button" id="again">Play Again</button></div>
@@ -27,6 +27,7 @@ $('#output').html(`
                 </div>
                 </div>
                 <div id='fighter1stats'></div>
+                <div id="fightresults"></div>
             <div class= "container">
             <input type="text" id="name2" class="input" placeholder ="Name Your Hellcat #2">
             <div class="dropdown pull-right" id="dropdown">
@@ -40,7 +41,7 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline2">Dot</a></li>
                  </div>
                 </div><div id='fighter2stats'></div>
-                <div id="fightresults"></div>
+
 
                 <div class="container">
                 <button class="btn btn-default butt pull-center" type="button" id="attack">Click & Commence</button>
