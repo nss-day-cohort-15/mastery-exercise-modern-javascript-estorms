@@ -2,6 +2,7 @@ body {
     font-size: 2em;
     /*background-color: rgba(255, 0, 255, 0.3);*/
     font-weight: bold;
+    background-color: grey;
 }
 
 h2 {
@@ -48,9 +49,13 @@ h2 {
     margin: 0 auto;
 }
 
+#attack {
+  margin-top: 25px;
+}
+
 #fighter1stats, #fighter2stats {
    margin-top: 10px;
-   font-size: 1em;
+   /*font-size: 1em;*/
 }
 
 .butt {
@@ -60,27 +65,24 @@ h2 {
     height: 50px;
 }
 
-img {
-box-shadow: 8px 5px 3px black;
-}
-/*.butt:hover {
-  background-color: firebrick;
-}*/
 
 #fightresults {
    text-align: center;
-   font-size: 3em;
+   font-size: 2em;
+   margin-top: 75px;
 }
 
-.divButt {
+/*.divButt {
     display: block;
     margin: 0 auto;
-}
+}*/
 
 img {
-  max-height: 200px;
+
   max-width: 200px;
-  position: center;
+  max-height: 200px;
+  border-radius: 25px;
+  box-shadow: 4px 5px 3px black;
 }
 
 /*button:hover {
