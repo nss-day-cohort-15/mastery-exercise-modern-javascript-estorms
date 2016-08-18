@@ -1,12 +1,15 @@
 'use strict';
 
+
+
 $(document).ready( () => {
  let fighter1;
  let fighter2;
 
 $('#output').html(`
 
-            <div id="header">Feline Feed Me, LT</div>
+            <div id="header">Feline Feed Me, LT<br>GAME OF CANS</div>
+
 
             <div class="container">
                 <div><button class="btn btn-default butt pull-center" type="button" id="again">Play Again</button></div>
@@ -44,6 +47,7 @@ $('#output').html(`
 
 
                 <div class="container">
+
                 <button class="btn btn-default butt pull-center" type="button" id="attack">Click & Commence</button>
                 <div style="text-align:center; margin-top: 5px;"></div>
                 </div>`)
@@ -142,12 +146,12 @@ function attackMode () {
 };
 
 function printFighter1Stats(x){
-      var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; margin-bottom: 75px; margin-left: 25px; background-color: lightgrey;"><img src="grumpcat.jpg" style="float:left; margin-right: 10px">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>`
+      var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; margin-bottom: 75px; margin-left: 25px; background-color: lightgrey;"><img src="grumpcat.jpg" style="float:left; margin-right: 10px; max-width: 200px; max-height: 200px; border-radius: 20px; box-shadow: 4px 5px 3px black;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>`
       $("#fighter1stats").html(fighterStats);
 };
 
 function printFighter2Stats(x){
-      var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; margin-bottom: 75px; margin-left: 25px; background-color: lightgrey;"><img src="hellcat.jpg" style="float:left; margin-right: 10px">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>
+      var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; margin-bottom: 75px; margin-left: 25px; background-color: lightgrey;"><img src="hellcat.jpg" style="float:left; margin-right: 10px; max-width: 200px; max-height: 200px; border-radius: 20px; box-shadow: 4px 5px 3px black;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>
 `
       $("#fighter2stats").html(fighterStats);
 };

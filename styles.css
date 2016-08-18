@@ -60,12 +60,12 @@ body {
 #fighter1stats, #fighter2stats {
   font-size: -1em;
 }
-c
+
 
 img {
 
-  max-width: 200px;
-  max-height: 120px;
+/*  max-width: 200px;
+  max-height: 120px;*/
   border-radius: 25px;
   box-shadow: 4px 5px 3px black;
 }
