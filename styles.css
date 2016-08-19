@@ -14,28 +14,21 @@ h1 {
 }
 
 
-
-
-
 #attack, #again {
     display: block;
     margin: 0 auto;
-     box-shadow: 8px 5px 3px black;
+    box-shadow: 8px 5px 3px black;
     font-size: 1em;
 }
-
-
-
 
 #fightresults {
    text-align: center;
    font-size: 2em;
-    color: orange;
-    text-shadow: 2px 2px 2px black;
+   color: orange;
+   text-shadow: 2px 2px 2px black;
 }
 
-/*#fighter1stats, #fighter2stats {
-  font-size: -1em;
-}*/
+
+
 
 

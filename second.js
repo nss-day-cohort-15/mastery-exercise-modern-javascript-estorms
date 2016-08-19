@@ -2,6 +2,13 @@
 
 //Set entire DOM-pop function to begin w/ page load
 
+//Error if user doesn't enter name
+//Random type picker option, what to do when user attacks without entering any info?
+//Deal with what happens if user clicks "attack" right away after "again", w/o entering any new info
+//stop polluting global name space with id's
+//run grunt
+//insert notes
+
 $(document).ready( () => {
      let fighter1;
      let fighter2;
@@ -52,8 +59,8 @@ $(document).ready( () => {
     <div id="fightresults"></div>
     <div class="row")>
     <div class="container">
-    <button type="button" class="btn btn-default" id="attack">Attack</button>
-    <button type="button" class="btn btn-default" id="again">Again</button>
+    <button type="button" class="btn btn-default" id="attack" style="margin-top: 10px">Attack</button>
+    <button type="button" class="btn btn-default hidden" id="again" style="margin-top: 10px">Again</button>
     </div> <!--/container-->
     </div> <!--/row-->`)
 
@@ -81,12 +88,12 @@ $(document).ready( () => {
 
 
     function printFighter1Stats(x){
-          var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; margin-bottom: 75px; margin-left: 25px; background-color: lightgrey;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and, like all tiny sociopaths who poop in a box, always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>`
+          var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; background-color: lightgrey;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and, like all tiny sociopaths who poop in a box, always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>`
           $("#fighter1stats").html(fighterStats);
     };
 
     function printFighter2Stats(x){
-          var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; margin-bottom: 75px; margin-left: 25px; background-color: lightgrey;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and obviously has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>
+          var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; background-color: lightgrey;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and obviously has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>
     `
           $("#fighter2stats").html(fighterStats);
     };
@@ -101,11 +108,15 @@ $(document).ready( () => {
             console.log('fighter1 loses')
 
             $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} is out of cans!`);
+            $("#again").removeClass("hidden");
+            $("#attack").addClass("hidden");
         };
         if(fighter2.hasCans <= 0){
             console.log('fighter2 loses')
             $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`);
+            $("#again").removeClass("hidden");
         };
+
     };
 
     $('#attack').click(attackMode);
@@ -118,6 +129,8 @@ $(document).ready( () => {
         $('#fighter1stats').empty();
         $('#fighter2stats').empty();
         $('.input').val('');
+        $("#again").addClass("hidden");
+        $("#attack").removeClass("hidden");
     };
 });
 
