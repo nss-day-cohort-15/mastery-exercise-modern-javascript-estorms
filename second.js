@@ -32,14 +32,14 @@ $(document).ready( () => {
               <li class="feline1"><a href="#">Sweetie</a></li>
             </ul>
           </div><!-- /btn-group -->
-          <input type="text" class="form-control input" aria-label="..." id="input1">
+          <input type="text" class="form-control input" aria-label="..." id="input1" placeholder="Fighter 1 Name">
         </div><!-- /input-group -->
         <div id="fighter1stats">
         </div><!-- fighter1stats -->
       </div><!-- /.col-lg-6 -->
       <div class="col-lg-6">
         <div class="input-group">
-          <input type="text" class="form-control input" aria-label="..." id="input2">
+          <input type="text" class="form-control input" aria-label="..." id="input2" placeholder="Fighter 2 Name">
           <div class="input-group-btn">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fighter 2 <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right">
@@ -71,16 +71,16 @@ $(document).ready( () => {
 
 
     function makeFighter1 () {
-        var text = $(this).text();
-        var userName1 = $('#input1').val();
+        let text = $(this).text();
+        let userName1 = $('#input1').val();
         fighter1 = new Tuckhouse.Combatants[text](userName1);
         printFighter1Stats(fighter1);
     }
 
 
     function makeFighter2 () {
-        var text = $(this).text();
-        var userName2 = $('#input2').val();
+        let text = $(this).text();
+        let userName2 = $('#input2').val();
         fighter2 = new Tuckhouse.Combatants[text](userName2);
         printFighter2Stats(fighter2);
     }
@@ -88,12 +88,12 @@ $(document).ready( () => {
 
 
     function printFighter1Stats(x){
-          var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; background-color: lightgrey;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and, like all tiny sociopaths who poop in a box, always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>`
+          let fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; background-color: lightgrey;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and, like all tiny sociopaths who poop in a box, always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>`
           $("#fighter1stats").html(fighterStats);
     };
 
     function printFighter2Stats(x){
-          var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; background-color: lightgrey;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and obviously has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>
+          let fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; background-color: lightgrey;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and obviously has a ${x.attitude} attitude. ${x.name} also commands ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>
     `
           $("#fighter2stats").html(fighterStats);
     };
@@ -115,6 +115,7 @@ $(document).ready( () => {
             console.log('fighter2 loses')
             $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`);
             $("#again").removeClass("hidden");
+            $("#attack").addClass("hidden");
         };
 
     };

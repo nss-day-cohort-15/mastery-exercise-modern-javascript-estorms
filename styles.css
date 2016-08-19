@@ -1,9 +1,10 @@
 body {
     font-size: 2em;
     font-weight: bold;
-    background-image: url('grumpcat.jpg');
+  /*  background-image: url('grumpcat.jpg');
     background-size: 400px;
-    background-position: center;
+    background-position: center;*/
+    background-color: lightpink;
 }
 
 h1 {
@@ -17,7 +18,7 @@ h1 {
 #attack, #again {
     display: block;
     margin: 0 auto;
-    box-shadow: 8px 5px 3px black;
+    box-shadow: 6px 5px 3px black;
     font-size: 1em;
 }
 
@@ -26,6 +27,18 @@ h1 {
    font-size: 2em;
    color: orange;
    text-shadow: 2px 2px 2px black;
+}
+
+.input {
+  background-color: lightyellow;
+      box-shadow: 6px 5px 3px black;
+
+
+}
+
+button {
+      box-shadow: 6px 5px 3px black;
+
 }
 
 
