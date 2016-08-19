@@ -6,61 +6,36 @@ body {
     background-position: center;
 }
 
-#header {
+h1 {
   text-align: center;
-  color: white;
+  color: orange;
   text-shadow: 2px 2px 2px black;
-  margin-left: 28px;
-  font-size: 2em;
-}
-
-.input {
-    box-shadow: 8px 5px 3px black;
-    font-weight: bold;
-    color: black;
-    margin-top: 5px;
-    background-color: white;
 
 }
 
-.dropdown {
-    margin-top: 10px;
-    box-shadow: 8px 5px 3px black;
-}
 
 
-.dropdown-menu {
-  margin-top: 30px;
-}
 
-
-#cont2 {
-    margin-top: -70px;
-}
 
 #attack, #again {
     display: block;
     margin: 0 auto;
-}
-
-
-.butt {
-
-    box-shadow: 8px 5px 3px black;
+     box-shadow: 8px 5px 3px black;
     font-size: 1em;
 }
+
+
 
 
 #fightresults {
    text-align: center;
    font-size: 2em;
-   margin-top: 75px;
-   color: orange;
-  text-shadow: 2px 2px 2px black;
+    color: orange;
+    text-shadow: 2px 2px 2px black;
 }
 
-#fighter1stats, #fighter2stats {
+/*#fighter1stats, #fighter2stats {
   font-size: -1em;
-}
+}*/
 
 
