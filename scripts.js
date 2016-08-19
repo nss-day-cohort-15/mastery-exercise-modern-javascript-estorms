@@ -1,16 +1,15 @@
 'use strict';
 
-
+//Set entire DOM-pop function to begin w/ page load
 
 $(document).ready( () => {
  let fighter1;
  let fighter2;
 
+ //Dropdowns and text input populate when doc ready
+
 $('#output').html(`
-
             <div id="header">Feline Feed Me, LT<br>GAME OF CANS</div>
-
-
             <div class="container">
                 <div><button class="btn btn-default butt pull-center" type="button" id="again">Play Again</button></div>
                 </div>
@@ -44,13 +43,12 @@ $('#output').html(`
                     <li><a href="#" id="" class="feline2">Dot</a></li>
                  </div>
                 </div><div id='fighter2stats'></div>
-
-
                 <div class="container">
-
                 <button class="btn btn-default butt pull-center" type="button" id="attack">Click & Commence</button>
                 <div style="text-align:center; margin-top: 5px;"></div>
                 </div>`)
+
+//when one of the items in dropdown 1 is clicked, innerText of that item grabbed, matched with corresponding cat, new object instantiated
 
 
 $('.feline1').click( () => {
@@ -90,6 +88,8 @@ console.log(fighter1);
 printFighter1Stats(fighter1);
 });
 
+//when one of the items in dropdown 2 is clicked, innerText of that item grabbed, matched with corresponding cat, new object instantiated
+
 $('.feline2').click( () => {
      var userName2 = $('#name2').val();
      fighter2 = event.target.innerText;
@@ -127,6 +127,8 @@ console.log(fighter2);
 printFighter2Stats(fighter2);
 });
 
+//attack mode function defined, calls printresults function for both fighters within
+
 function attackMode () {
 
     fighter1.hasCans = fighter1.hasCans - fighter2.eatsCans;
@@ -145,6 +147,7 @@ function attackMode () {
 
 };
 
+
 function printFighter1Stats(x){
       var fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; margin-bottom: 75px; margin-left: 25px; background-color: lightgrey;"><img src="grumpcat.jpg" style="float:left; margin-right: 10px; max-width: 200px; max-height: 200px; border-radius: 20px; box-shadow: 4px 5px 3px black;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>`
       $("#fighter1stats").html(fighterStats);
@@ -160,6 +163,8 @@ function printFighter2Stats(x){
 $('#attack').click(attackMode);
 $('#again').click(again);
 
+//function to clear DOM and allow another fight
+
 function again() {
     $('#fightresults').empty();
     $('#fighter1stats').empty();
@@ -170,3 +175,4 @@ function again() {
 };
 
 });
+

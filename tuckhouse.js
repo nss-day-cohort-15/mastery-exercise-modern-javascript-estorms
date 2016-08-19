@@ -1,10 +1,15 @@
 'use strict'
 
+//SET GLOBAL VAR TO CREATE PROTOTYPE CHAIN
+
 var Tuckhouse = (function (tuckhouse) {
 
+//declare empty object to hold cats ("robots")
 tuckhouse.Combatants = {};
 
 tuckhouse.Combatants.Cat = function() {
+
+//set top of prototype chain (Cat constructor)
 
     this.hasCans = 50;
     this.eatsCans = 3;
@@ -13,6 +18,8 @@ tuckhouse.Combatants.Cat = function() {
     this.attitude = 'bad';
 
 };
+
+//next level down on chain: types (Percher/Slinker/Indifferent Constructors)
 
 tuckhouse.Combatants.Percher = function () {
     this.preferences = 'listening to Jamiroquai';
@@ -34,6 +41,8 @@ tuckhouse.Combatants.Slinker.prototype = new tuckhouse.Combatants.Cat();
 };
 
 tuckhouse.Combatants.Indifferent.prototype = new tuckhouse.Combatants.Cat();
+
+//Set last levels of prototype chain (2 "models" for each type of cat)
 
 tuckhouse.Combatants.Boots = function (userName) {
     this.hasCans = this.hasCans + Math.floor(Math.random() * 6 + 1);
