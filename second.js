@@ -1,13 +1,13 @@
 'use strict';
 
-
-//Deal with what happens if user clicks "attack" right away after "again", w/o entering any new info
-//Random fighter generator
+//Random fighter generator, allow weapons
 //styling
 
 $(document).ready( () => {
      let fighter1;
      let fighter2;
+     let f1x; //vars to check if fighters are made before fight begins ("fighter 1 exists")
+     let f2x; //vars to check if fighters are made before fight begins ("fighter 2 exists")
 
      //Dropdowns and text input populate when doc ready
 
@@ -85,6 +85,7 @@ $(document).ready( () => {
         let userName1 = $('#input1').val();
         fighter1 = new Tuckhouse.Combatants[text](userName1);
         printFighter1Stats(fighter1);
+        f1x = true;
     }
       else if ($('#input1').val() !== ''){
          $('#fighter1stats').html("I was hoping you wouldn't pick this. The random model generator isn't functional yet. Do me a kindness and pick a type.");
@@ -103,6 +104,7 @@ $(document).ready( () => {
         let userName2 = $('#input2').val();
         fighter2 = new Tuckhouse.Combatants[text](userName2);
         printFighter2Stats(fighter2);
+        f2x = true;
     }
 
         else if ($('#input2').val() !=='' && $(this).text() === "I'm Too Lazy To Choose"){
@@ -133,6 +135,8 @@ $(document).ready( () => {
     //Attack function. Health('has cans') pitted against damage('eats cans') and results outputted to DOM when either fighter 'dies'.
 
     function attackMode () {
+
+        if (f1x === true && f2x === true ) {
             fighter1.hasCans = fighter1.hasCans - fighter2.eatsCans;
             fighter2.hasCans = fighter2.hasCans - fighter1.eatsCans;
             printFighter1Stats(fighter1);
@@ -148,6 +152,11 @@ $(document).ready( () => {
                     $("#again").removeClass("hidden");
                     $("#attack").addClass("hidden");
                 }
+            }
+        else {
+            alert("I can't do your work for you. Create some players.");
+        }
+
         };
 
 //Attack mode is called on click of attack button.
@@ -170,6 +179,8 @@ $('#again').click(again);
         $("#attack").removeClass("hidden");
         $("#fighter2pic").addClass("hidden");
         $("#fighter1pic").addClass("hidden");
+        f1x = false;
+        f2x = false;
     };
 });
 
