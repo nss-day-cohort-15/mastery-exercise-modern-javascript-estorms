@@ -78,18 +78,28 @@ $(document).ready( () => {
 
 
     function makeFighter1 () {
+        if ($('#input1').val() !== ''){
         let text = $(this).text();
         let userName1 = $('#input1').val();
         fighter1 = new Tuckhouse.Combatants[text](userName1);
         printFighter1Stats(fighter1);
     }
+    else {
+        $('#fighter1stats').html("No can do, kitten. Enter a name for your first fighter and then select its type.")
+    }
+    }
 
 
     function makeFighter2 () {
+        if ($('#input2').val() !==''){
         let text = $(this).text();
         let userName2 = $('#input2').val();
         fighter2 = new Tuckhouse.Combatants[text](userName2);
         printFighter2Stats(fighter2);
+    }
+        else {
+        $('#fighter2stats').html("No can do, kitten. Enter a name for your second fighter and then select its type.")
+    }
     }
 
 
