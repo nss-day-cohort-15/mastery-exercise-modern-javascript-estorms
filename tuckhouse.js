@@ -17,6 +17,7 @@ tuckhouse.Combatants.Cat = function() {
     this.indenturedServant = 'Luke';
     this.attitude = 'bad';
     this.allowedModels = ['Boots', 'Buddy', 'Dot', 'Maggie', 'Belmont', 'Sweetie'];
+    this.weapon = null;
 
 };
 
@@ -114,22 +115,19 @@ tuckhouse.Combatants.Dot = function (userName) {
 
 tuckhouse.Combatants.Dot.prototype = new tuckhouse.Combatants.Indifferent();
 
-// tuckhouse.Combatants.Cat.prototype.generateType = function() {
-//   // Get a random index from the allowed models array
-//   var random = Math.round(Math.random() * (this.allowedModels.length - 1) + 1);
-
-//   // Get the string at the index
-//   var randomModel = Cats.allowedModels[random];
-
-//   // Composes the corresponding model into the fighter object
-//   var randomCat = new tuckhouse.Combatants[randomModel]();
-
-//   return randomCat;
-
-// };
 
 
-//THE PROBLEM HERE HAS TO DO WITH HOW YOU ARE CALLING THE MODELS AND THEIR RELATIONSHIP TO CAT
+// tuckhouse.Combatants.Cat.prototype.randomize = function (){
+//     var newCat = new tuckhouse.Combatants.Cat();
+//     randomNum = Math.round(Math.random() * (6 - 1) + 1);
+//     var randomModel = newCat.allowedModels[randomNum];
+//     var randomCat = new tuchouse.Combatants.randomModel();
+//     newCat = randomCat;
+//     return newCat;
+// }
+
+// var test = tuckhouse.Combatants.Cat.randomize;
+// console.log(test)
 
 return tuckhouse;
 
