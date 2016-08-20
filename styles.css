@@ -1,13 +1,12 @@
 body {
     font-size: 2em;
     font-weight: bold;
-  /*  background-image: url('grumpcat.jpg');
-    background-size: 400px;
-    background-position: center;*/
+
     background-color: lightpink;
 }
 
 h1 {
+  font-size: 2em;
   text-align: center;
   color: tomato;
   text-shadow: 2px 2px 2px black;
@@ -25,7 +24,7 @@ h1 {
 #fightresults {
    text-align: center;
    font-size: 2em;
-   color: orange;
+   color: tomato;
    text-shadow: 2px 2px 2px black;
 }
 

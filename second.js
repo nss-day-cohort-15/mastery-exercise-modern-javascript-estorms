@@ -1,13 +1,9 @@
 'use strict';
 
-//Set entire DOM-pop function to begin w/ page load
 
-//Error if user doesn't enter name
-//Random type picker option, what to do when user attacks without entering any info?
 //Deal with what happens if user clicks "attack" right away after "again", w/o entering any new info
-//stop polluting global name space with id's
-//run grunt
-//insert notes
+//Random fighter generator
+//styling
 
 $(document).ready( () => {
      let fighter1;
@@ -31,6 +27,8 @@ $(document).ready( () => {
               <li class="feline1"><a href="#">Belmont</a></li>
               <li class="feline1"><a href="#">Buddy</a></li>
               <li class="feline1"><a href="#">Sweetie</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="feline1"><a href="#">I'm Too Lazy To Choose</a></li>
             </ul>
           </div><!-- /btn-group -->
           <input type="text" class="form-control input" aria-label="..." id="input1" placeholder="Fighter 1 Name">
@@ -53,6 +51,8 @@ $(document).ready( () => {
               <li class="feline2"><a href="#">Belmont</a></li>
               <li class="feline2"><a href="#">Buddy</a></li>
               <li class="feline2"><a href="#">Sweetie</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="feline2"><a href="#">I'm Too Lazy To Choose</a></li>
             </ul>
           </div><!-- /btn-group -->
 
@@ -69,40 +69,54 @@ $(document).ready( () => {
     <button type="button" class="btn btn-default" id="attack" style="margin-top: 10px">Attack</button>
     <button type="button" class="btn btn-default hidden" id="again" style="margin-top: 10px">Can't Get Enough 1999? Play Again</button>
     </div> <!--/container-->
-    </div> <!--/row-->`)
+    </div> <!--/row-->`);
 
+//Listeners set on dropdown menu items will run create fighter functions on click
 
     $('.feline1').click(makeFighter1);
     $('.feline2').click(makeFighter2);
 
 
+//Create fighter 1 function. User given directives if name hasn't been entered or random generator option selected
 
     function makeFighter1 () {
-        if ($('#input1').val() !== ''){
+        if ($('#input1').val() !== '' && $(this).text() !== "I'm Too Lazy To Choose"){
         let text = $(this).text();
         let userName1 = $('#input1').val();
         fighter1 = new Tuckhouse.Combatants[text](userName1);
         printFighter1Stats(fighter1);
     }
-    else {
-        $('#fighter1stats').html("No can do, kitten. Enter a name for your first fighter and then select its type.")
-    }
+      else if ($('#input1').val() !== ''){
+         $('#fighter1stats').html("I was hoping you wouldn't pick this. The random model generator isn't functional yet. Do me a kindness and pick a type.");
     }
 
+    else {
+        $('#fighter1stats').html("No can do, kitten. Enter a name for your first fighter and then select its type.");
+    }
+    };
+
+//Create fighter 2 function. User given directives if name hasn't been entered or random generator option selected
 
     function makeFighter2 () {
-        if ($('#input2').val() !==''){
+        if ($('#input2').val() !=='' && $(this).text() !== "I'm Too Lazy To Choose"){
         let text = $(this).text();
         let userName2 = $('#input2').val();
         fighter2 = new Tuckhouse.Combatants[text](userName2);
         printFighter2Stats(fighter2);
     }
+
+        else if ($('#input2').val() !=='' && $(this).text() === "I'm Too Lazy To Choose"){
+         $('#fighter2stats').html("I was hoping you wouldn't pick this. The random model generator isn't functional yet. Do me a kindness and pick a type.");
+    }
+
         else {
         $('#fighter2stats').html("No can do, kitten. Enter a name for your second fighter and then select its type.")
     }
-    }
+
+    };
 
 
+//Functions to print fighters 1 and 2 stats to DOM. These are both called twice: when fighters are first created and during fight itself, in order to reflect changes in fighter stats as fight function runs.
 
     function printFighter1Stats(x){
           let fighterStats = `<div style="border: 1px dotted black; border-radius: 25px; padding: 10px; margin-top:10px; background-color: lightgrey;">${x.name} the ${x.title} weighs ${x.weight} pounds, would rather be ${x.preferences}, and, like all tiny sociopaths who poop in a box, always has a ${x.attitude} attitude. ${x.name} commands an indentured servant named ${x.indenturedServant}, who has kindly provided ${x.name} with <span style="color:red; font-weight: bolder">${x.hasCans}</span> cans.</div>`
@@ -116,32 +130,36 @@ $(document).ready( () => {
           $('#fighter2pic').removeClass('hidden').attr('src', x.image);
     };
 
+    //Attack function. Health('has cans') pitted against damage('eats cans') and results outputted to DOM when either fighter 'dies'.
+
     function attackMode () {
+            fighter1.hasCans = fighter1.hasCans - fighter2.eatsCans;
+            fighter2.hasCans = fighter2.hasCans - fighter1.eatsCans;
+            printFighter1Stats(fighter1);
+            printFighter2Stats(fighter2);
+                if(fighter1.hasCans <= 0) {
+                    $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} is out of cans!`);
+                    $("#again").removeClass("hidden");
+                    $("#attack").addClass("hidden");
+                }
 
-        fighter1.hasCans = fighter1.hasCans - fighter2.eatsCans;
-        fighter2.hasCans = fighter2.hasCans - fighter1.eatsCans;
-        printFighter1Stats(fighter1);
-        printFighter2Stats(fighter2);
-        if(fighter1.hasCans <= 0) {
-            console.log('fighter1 loses')
-
-            $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} is out of cans!`);
-            $("#again").removeClass("hidden");
-            $("#attack").addClass("hidden");
-        };
-        if(fighter2.hasCans <= 0){
-            console.log('fighter2 loses')
-            $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`);
-            $("#again").removeClass("hidden");
-            $("#attack").addClass("hidden");
+                if(fighter2.hasCans <= 0){
+                    $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`);
+                    $("#again").removeClass("hidden");
+                    $("#attack").addClass("hidden");
+                }
         };
 
-    };
+//Attack mode is called on click of attack button.
 
-    $('#attack').click(attackMode);
-    $('#again').click(again);
+$('#attack').click(attackMode);
 
-    //function to clear DOM and allow another fight
+//Again mode is called on click of again button
+
+$('#again').click(again);
+
+
+//Again function to clear DOM and allow another fight: replaces "Attack" button with "Again"
 
     function again() {
         $('#fightresults').empty();

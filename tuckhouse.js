@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 //SET GLOBAL VAR TO CREATE PROTOTYPE CHAIN
 
@@ -16,6 +16,7 @@ tuckhouse.Combatants.Cat = function() {
     this.preferences = null;
     this.indenturedServant = 'Luke';
     this.attitude = 'bad';
+    this.allowedModels = ['Boots', 'Buddy', 'Dot', 'Maggie', 'Belmont', 'Sweetie'];
 
 };
 
@@ -49,7 +50,7 @@ tuckhouse.Combatants.Boots = function (userName) {
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 8 + 1);
     this.name = userName;
     this.title = 'Boots';
-    this.image = 'grumpcat.jpg'
+    this.image = 'grumpcat.jpg';
 
 };
 
@@ -61,7 +62,7 @@ tuckhouse.Combatants.Buddy = function (userName) {
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 4 + 7);
     this.name = userName;
     this.title = 'Buddy';
-    this.image = 'hellcat.jpg'
+    this.image = 'hellcat.jpg';
 
 };
 
@@ -72,7 +73,7 @@ tuckhouse.Combatants.Sweetie = function (userName) {
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 4 + 6);
     this.name = userName;
     this.title = 'Sweetie';
-    this.image = "http://cdn77.sadanduseless.com/wp-content/uploads/2014/08/angry-cat9.jpg"
+    this.image = "http://cdn77.sadanduseless.com/wp-content/uploads/2014/08/angry-cat9.jpg";
 
 };
 
@@ -83,7 +84,7 @@ tuckhouse.Combatants.Maggie = function (userName) {
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 3 + 9);
     this.name = userName;
     this.title = 'Maggie';
-    this.image = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR0EqgUJUdjwleeHyrILrn587g9DIYRY4HXBOl29mj-0_j8SdN1ew"
+    this.image = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR0EqgUJUdjwleeHyrILrn587g9DIYRY4HXBOl29mj-0_j8SdN1ew";
 
 };
 
@@ -95,7 +96,7 @@ tuckhouse.Combatants.Belmont = function (userName) {
     this.eatsCans = this.eatsCans +Math.floor(Math.random() * 12 + 1);
     this.name = userName;
     this.title = 'Belmont';
-    this.image="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSxWIdSJum-27wWh9J6lK5ngkZMtemC_UR0d40S6NOtjSwfwlz8Fg"
+    this.image="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSxWIdSJum-27wWh9J6lK5ngkZMtemC_UR0d40S6NOtjSwfwlz8Fg";
 
 };
 
@@ -107,11 +108,28 @@ tuckhouse.Combatants.Dot = function (userName) {
     this.eatsCans = this.eatsCans + Math.floor(Math.random() * 3 + 15);
     this.name = userName;
     this.title = 'Dot';
-    this.image= "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQoqn91Ut7eFiwz5dDIMvLmbquPDXR-ojT9MVDAVT0Eeo_gimhcFw"
+    this.image= "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQoqn91Ut7eFiwz5dDIMvLmbquPDXR-ojT9MVDAVT0Eeo_gimhcFw";
 
 };
 
 tuckhouse.Combatants.Dot.prototype = new tuckhouse.Combatants.Indifferent();
+
+// tuckhouse.Combatants.Cat.prototype.generateType = function() {
+//   // Get a random index from the allowed models array
+//   var random = Math.round(Math.random() * (this.allowedModels.length - 1) + 1);
+
+//   // Get the string at the index
+//   var randomModel = Cats.allowedModels[random];
+
+//   // Composes the corresponding model into the fighter object
+//   var randomCat = new tuckhouse.Combatants[randomModel]();
+
+//   return randomCat;
+
+// };
+
+
+//THE PROBLEM HERE HAS TO DO WITH HOW YOU ARE CALLING THE MODELS AND THEIR RELATIONSHIP TO CAT
 
 return tuckhouse;
 
