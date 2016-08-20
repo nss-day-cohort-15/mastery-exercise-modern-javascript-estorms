@@ -67,7 +67,7 @@ $(document).ready( () => {
     <div class="row")>
     <div class="container">
     <button type="button" class="btn btn-default" id="attack" style="margin-top: 10px">Attack</button>
-    <button type="button" class="btn btn-default hidden" id="again" style="margin-top: 10px">Again</button>
+    <button type="button" class="btn btn-default hidden" id="again" style="margin-top: 10px">Can't Get Enough 1999? Play Again</button>
     </div> <!--/container-->
     </div> <!--/row-->`)
 
