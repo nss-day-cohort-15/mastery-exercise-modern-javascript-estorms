@@ -154,7 +154,7 @@ $(document).ready( () => {
                 }
             }
         else {
-            alert("I can't do your work for you. Create some players.");
+            alert("I can't do your work for you. Create two players.");
         }
 
         };

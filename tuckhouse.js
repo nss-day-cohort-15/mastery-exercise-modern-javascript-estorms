@@ -117,17 +117,16 @@ tuckhouse.Combatants.Dot.prototype = new tuckhouse.Combatants.Indifferent();
 
 
 
-// tuckhouse.Combatants.Cat.prototype.randomize = function (){
-//     var newCat = new tuckhouse.Combatants.Cat();
-//     randomNum = Math.round(Math.random() * (6 - 1) + 1);
-//     var randomModel = newCat.allowedModels[randomNum];
-//     var randomCat = new tuchouse.Combatants.randomModel();
-//     newCat = randomCat;
-//     return newCat;
-// }
+tuckhouse.Combatants.Cat.randomize = function (){
+    var newCat = new tuckhouse.Combatants.Cat();
+    var randomNum = Math.round(Math.random() * (6 - 1) + 1);
+    var randomModel = newCat.allowedModels[randomNum];
+    var randomCat = new tuckhouse.Combatants[randomModel]();
+    newCat = randomCat;
+    return newCat;
+}
 
-// var test = tuckhouse.Combatants.Cat.randomize;
-// console.log(test)
+
 
 return tuckhouse;
 
