@@ -87,9 +87,20 @@ $(document).ready( () => {
         printFighter1Stats(fighter1);
         f1x = true;
     }
-      else if ($('#input1').val() !== ''){
-         $('#fighter1stats').html("I was hoping you wouldn't pick this. The random model generator isn't functional yet. Do me a kindness and pick a type.");
+
+    else if ( $('#input1').val() !==''){
+        let userName1 = $('input1').val();
+        var x = Tuckhouse.Combatants.Cat.randomize();
+        fighter1 = x;
+        printFighter1Stats(fighter1);
+        f1x = true;
+        console.log(x)
+
     }
+    //   else if ($('#input1').val() !== ''){
+    //      $('#fighter1stats').html("I was hoping you wouldn't pick this. The random model generator isn't functional yet. Do me a kindness and pick a type.");
+    // }
+    // }
 
     else {
         $('#fighter1stats').html("No can do, kitten. Enter a name for your first fighter and then select its type.");
@@ -107,8 +118,18 @@ $(document).ready( () => {
         f2x = true;
     }
 
-        else if ($('#input2').val() !=='' && $(this).text() === "I'm Too Lazy To Choose"){
-         $('#fighter2stats').html("I was hoping you wouldn't pick this. The random model generator isn't functional yet. Do me a kindness and pick a type.");
+    //     else if ($('#input2').val() !=='' && $(this).text() === "I'm Too Lazy To Choose"){
+    //      $('#fighter2stats').html("I was hoping you wouldn't pick this. The random model generator isn't functional yet. Do me a kindness and pick a type.");
+    // }
+
+    else if ( $('#input2').val() !==''){
+        let userName2 = $('input2').val();
+        var x = Tuckhouse.Combatants.Cat.randomize();
+        fighter2 = x;
+        printFighter2Stats(fighter2);
+        f2x = true;
+        console.log(x)
+
     }
 
         else {
