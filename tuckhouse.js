@@ -117,12 +117,13 @@ tuckhouse.Combatants.Dot.prototype = new tuckhouse.Combatants.Indifferent();
 
 
 
-tuckhouse.Combatants.Cat.randomize = function (){
+tuckhouse.Combatants.Cat.randomize = function (userName){
     var newCat = new tuckhouse.Combatants.Cat();
     var randomNum = Math.round(Math.random() * (6 - 1) + 1);
     var randomModel = newCat.allowedModels[randomNum];
-    var randomCat = new tuckhouse.Combatants[randomModel]();
+    var randomCat = new tuckhouse.Combatants[randomModel](userName);
     newCat = randomCat;
+    // newCat.name = userName;
     return newCat;
 }
 
