@@ -1,0 +1,65 @@
+body {
+    font-size: 2em;
+    font-weight: bold;
+
+    background-color: lightpink;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  color: tomato;
+  text-shadow: 2px 2px 2px black;
+
+}
+
+
+#attack, #again {
+    display: block;
+    margin: 0 auto;
+    box-shadow: 6px 5px 3px black;
+    font-size: 1em;
+}
+
+#fightresults {
+   text-align: center;
+   font-size: 2em;
+   color: tomato;
+   text-shadow: 2px 2px 2px black;
+}
+
+.input {
+  background-color: lightyellow;
+      box-shadow: 6px 5px 3px black;
+}
+
+.dropdown-menu {
+  background-color: orange;
+  font-weight: bolder;
+}
+
+button {
+      box-shadow: 6px 5px 3px black;
+
+}
+
+img {
+height: 200px;
+width: 200px;
+border-radius: 20px;
+}
+
+#fighter2pic {
+  float: right;
+}
+
+#fighter2stats{
+  clear: right;
+}
+
+#input2div {
+  clear: right;
+}
+
+
+
