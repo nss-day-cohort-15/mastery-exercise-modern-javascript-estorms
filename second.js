@@ -90,7 +90,7 @@ $(document).ready( () => {
         f1x = true;
     }
 
-//Make random type fighter 1 with
+//Make random type fighter 1 with user name
 
     else if ( $('#input1').val() !==''){
         let userName1 = $('#input1').val();
@@ -161,12 +161,16 @@ $(document).ready( () => {
             printFighter1Stats(fighter1);
             printFighter2Stats(fighter2);
                 if(fighter1.hasCans <= 0) {
+                  fighter1.hasCans = 0;
+                  printFighter1Stats(fighter1);
                     $('#fightresults').html(`Time to buy groceries, Luke! ${fighter1.name} is out of cans!`);
                     $("#again").removeClass("hidden");
                     $("#attack").addClass("hidden");
                 }
 
                 if(fighter2.hasCans <= 0){
+                  fighter2.hasCans = 0;
+                  printFighter2Stats(fighter2);
                     $('#fightresults').html(`Time to buy groceries, Luke! ${fighter2.name} is out of cans!`);
                     $("#again").removeClass("hidden");
                     $("#attack").addClass("hidden");
